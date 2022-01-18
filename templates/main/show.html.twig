@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br>
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+                {{ ticket.subject }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ ticket.name }} {{ ticket.surname }}</h5>
+                <p class="card-text">{{ ticket.email }}</p>
+                <p class="card-text">{{ ticket.message }}</p>
+
+            </div>
+            <div class="card-footer text-muted">
+                <a href="{{ path('main') }}" class="btn btn-info text-white">Go Back</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

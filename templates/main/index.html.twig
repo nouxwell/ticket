@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br>
+    <div class="container">
+        {% for message in app.flashes('notice') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <a class="btn btn-success" href="{{ path('create') }}">Create</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Message</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for data in list %}
+                <tr>
+                    <th scope="row">{{ data.id }}</th>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.surname }}</td>
+                    <td>{{ data.email }}</td>
+                    <td>{{ data.subject }}</td>
+                    <td>{{ data.message }}</td>
+                    <td>
+
+                        <a class="btn btn-dark" href="{{ path('update',{'id':data.id }) }}">Update</a>
+                        <a class="btn btn-warning" href="{{ path('show',{'id':data.id }) }}">View</a>
+                        <a class="btn btn-danger" href="{{ path('delete',{'id':data.id }) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

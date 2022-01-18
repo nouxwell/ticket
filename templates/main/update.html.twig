@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h3 class="mt-5 mb-5" style="text-align: center;">Update Ticket</h3>
+
+            <div class="col-md-6 offset-md-3 text-center">
+                {{ form_start(form) }}
+                <div class="form-group">
+                    {{ form_label(form.name) }}<br>
+                    {{ form_widget(form.name,{'attr':{'class':'form_control', 'style':'width:400px'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.surname) }}<br>
+                    {{ form_widget(form.surname,{'attr':{'class':'form_control', 'style':'width:400px'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.email) }}<br>
+                    {{ form_widget(form.email,{'attr':{'class':'form_control', 'style':'width:400px'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.subject) }}<br>
+                    {{ form_widget(form.subject,{'attr':{'class':'form_control', 'style':'width:400px'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.message) }}<br>
+                    {{ form_widget(form.message,{'attr':{'class':'form_control', 'style':'width:400px'}}) }}
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info mt-2 text-white">Update</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
